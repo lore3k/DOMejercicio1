@@ -8,13 +8,17 @@ function comenzarJuego(){
     let numeroElegido = parseInt(prompt("Elige un número del 0 al 9: "));
     console.log(numeroElegido);
 
-    if(numeroRandom < numeroElegido){
-        alert("No adivinaste =( El número que elegiste es mayor al número mágico");
-    }else{
-        if(numeroRandom > numeroElegido){
-            alert("No adivinaste =( El número que elegiste es menor al número mágico");
+    if(numeroElegido>=0 && numeroElegido<10){
+        if(numeroRandom < numeroElegido){
+            alert("No adivinaste =( El número que elegiste es mayor al número mágico");
         }else{
-            alert("FELICIDADES! Adivinaste el número mágico! =)");
+            if(numeroRandom > numeroElegido){
+                alert("No adivinaste =( El número que elegiste es menor al número mágico");
+            }else{
+                alert("FELICIDADES! Adivinaste el número mágico! =)");
+            }
         }
-    }
+    }else{
+        alert("Debe ingresar un número entre del 0 al 9");
+    }   
 }
