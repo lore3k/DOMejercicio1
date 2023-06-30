@@ -1,11 +1,22 @@
+let numeroRandom;
+let bandera = 0;
 let botonComenzarJuego = document.querySelector("#btnJuego");
-
 botonComenzarJuego.addEventListener("click",comenzarJuego);
 
+let formulario = document.querySelector('form');
+    formulario.addEventListener('submit',leerDato);
+
 function comenzarJuego(){
-    var numeroRandom = Math.floor( Math.random() * 10);
-    console.log(numeroRandom);
-    let numeroElegido = parseInt(prompt("Elige un número del 0 al 9: "));
+    numeroRandom = Math.floor( Math.random() * 10);
+    console.log(numeroRandom);   
+    let seccion = document.getElementById("seccionDisplay");
+    seccion.className ='d-block';
+}
+
+function leerDato(e){
+    e.preventDefault();
+
+    let numeroElegido = document.querySelector('input').value;
     console.log(numeroElegido);
 
     if(numeroElegido>=0 && numeroElegido<10){
@@ -20,5 +31,9 @@ function comenzarJuego(){
         }
     }else{
         alert("Debe ingresar un número entre del 0 al 9");
-    }   
+    }
+    let formulario = document.getElementById('resetForm');
+    formulario.reset();
+    let seccion = document.getElementById("seccionDisplay");
+    seccion.className = 'd-none';   
 }
