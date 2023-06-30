@@ -1,5 +1,4 @@
 let numeroRandom;
-let bandera = 0;
 let botonComenzarJuego = document.querySelector("#btnJuego");
 botonComenzarJuego.addEventListener("click",comenzarJuego);
 
